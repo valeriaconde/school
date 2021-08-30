@@ -1,0 +1,20 @@
+COMENTARIO:              //casos
+VARIABLE:                b
+ASIGNACIÓN:              =
+ENTERO:                  7
+VARIABLE:                a
+ASIGNACIÓN:              =
+REAL:                    32.4
+MULTIPLICACIÓN:          *
+PARÉNTESIS QUE ABRE:     (
+REAL:                    -8.6
+RESTA:                   -
+VARIABLE:                b
+PARÉNTESIS QUE CIERRA:   )
+DIVISIÓN:                /
+REAL:                    6.1E-8
+VARIABLE:                d
+ASIGNACIÓN:              =
+POTENCIA:                ^
+VARIABLE:                b
+COMENTARIO:              //Esto es un comentario

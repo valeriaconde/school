@@ -1,0 +1,18 @@
+Valeria Conde A01281637
+Daniela Garza A00829404
+
+					Analizador semántico
+
+Valeria
+Para realizar este analizador semántico, recibíamos un archivo con strings que contenían una expresión matemática del tipo aritmética, donde 5+5=10, 1+10-6=400 y 2-1*1/1+1=2, todas son una expresión válida. El reto consistía en procesar esa expresión para determinar si era correcta, en cuyo caso 5+5=10 y 2-1*1/1+1=2 sí lo son, y 1+10-6=400 no lo es. 
+
+Este problema puede ser abordado desde múltiples perspectivas. Una de ellas es realizar cuatro funciones que correspondan al procesamiento de cada expresión aritmética aceptada por nuestro programa e ir mandando a cada una de ellas la expresión correspondiente al tiempo que se procesa la string. Esta solución no es óptima, puesto que al procesar una string como aquella que contiene múltiples expresiones, por ejemplo, 1+10-6=400, el programa se quedaría esperando a que 1+10 concluyese la tarea para proceder a realizar la siguiente operación, 11-6. 
+
+En realidad, este problema no tiene una solución concurrente óptima, puesto que no se trata de un problema que pueda dividirse en procesos que pueden ejecutarse simultáneamente, sino que se debe solucionar de manera secuencial, tal como lo haríamos a mano. Por ello, para darle solución al problema, realizamos una solución en la que de manera secuencial hacemos el cálculo de la expresión, para posteriormente comparar con el resultado que viene después del =, e implementamos concurrencia al generar un proceso por cada línea que se encuentra en el archivo de entrada. Al final, el programa entrega el resultado de la expresión original y lo compara con el resultado que computó y después imprime verdadero o falso, si son iguales.
+
+
+La solución que programamos es lineal, de manera que tarda O(n) en realizar el cómputo, donde n es el total de caracteres en el archivo de entrada. Este problema es un buen ejemplo de que no todos los problemas pueden resolverse concurrentemente; en este caso, es posible, pero no es eficiente, de hecho al hacerlo se crea una solución dependiente del tiempo y algunos procesos tienen que esperar a que concluya uno para poder continuar con el proceso. En este caso no representa un gran problema, al tratarse de inputs pequeños, pero es una pésima solución paralelizar algo que no tiene por qué serlo.
+
+
+Daniela
+La solución planteada es la más eficaz en mi opinión ya que primero separamos el codigo en las funciones de sumas y restas, de multiplicación y división, y después iteramos la lista. Al finalizar, se manda una operación a la función y se iteran las líneas del archivo y al final se checa la validación de cada expresión. Es conciso y es una solución al problema. El tiempo de ejecución de los algoritmos es de menos de 1 segundo, por lo que es bastante rápido.
